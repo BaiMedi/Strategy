@@ -1,0 +1,33 @@
+## **Simulador**
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Simulador de Estrategias</title>
+</head>
+<body>
+    <div class="simulator">
+        <label>Tipo de Cliente:</label>
+        <input type="text" id="cliente" placeholder="Ej. Restaurante, Tienda online">
+
+        <label>Horas Activas de la Audiencia:</label>
+        <input type="text" id="horas" placeholder="Ej. 6 pm - 9 pm">
+
+        <button onclick="generarEstrategia()">Generar Estrategia</button>
+
+        <div class="result">
+            <p><strong>Estrategia de Publicación:</strong> <span id="estrategia"></span></p>
+        </div>
+    </div>
+
+    <script>
+        function generarEstrategia() {
+            const cliente = document.getElementById("cliente").value;
+            const horas = document.getElementById("horas").value;
+            const estrategia = `Para ${cliente}, recomendamos publicar entre ${horas} de martes a viernes.`;
+            document.getElementById("estrategia").innerText = estrategia;
+        }
+    </script>
+</body>
+</html>
